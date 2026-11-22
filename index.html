@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bett RoboHacks Thanksgiving 2026</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Newsreader (Editorial Serif) & Inter (Clean Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            parchment: '#FAF6F0',
+            cardWarm: '#FFFDF9',
+            borderWarm: '#E6DDD0',
+            espresso: '#261D17',
+            mutedBrown: '#635347',
+            terracotta: '#B44B27',
+            ochre: '#C28226',
+            forestSage: '#3F5E4D',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-parchment text-espresso font-sans antialiased selection:bg-terracotta selection:text-white">
+
+  <!-- =====================================================================
+       TOP COUNTDOWN BANNER
+       ===================================================================== -->
+  <div class="sticky top-0 z-30 bg-[#261D17] text-[#FAF6F0] border-b border-[#3D2F26]">
+    <div class="max-w-4xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-ochre"></span>
+        <span class="font-medium tracking-wide uppercase text-[11px] text-[#E6DDD0]">Kickoff Countdown</span>
+        <span id="ui-countdown-note" class="hidden sm:inline text-[#B8A99A]">— Nov 26, 2026 • 9:00 AM CST</span>
+      </div>
+
+      <div class="flex items-center gap-3 font-medium tabular-nums">
+        <span><strong id="cd-days" class="text-amber-300">00</strong>d</span>
+        <span class="text-[#7A6A5C]">•</span>
+        <span><strong id="cd-hours" class="text-amber-300">00</strong>h</span>
+        <span class="text-[#7A6A5C]">•</span>
+        <span><strong id="cd-mins" class="text-amber-300">00</strong>m</span>
+        <span class="text-[#7A6A5C]">•</span>
+        <span><strong id="cd-secs" class="text-amber-300">00</strong>s</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MAIN PAGE CONTENT
+       ===================================================================== -->
+  <main class="max-w-4xl mx-auto px-5 py-12 sm:py-16 space-y-12">
+
+    <!-- HERO SECTION (Clean Typography, No Buttons) -->
+    <header class="space-y-5 pb-8 border-b border-borderWarm">
+      <p id="ui-eyebrow" class="text-xs font-semibold uppercase tracking-[0.14em] text-terracotta">
+        Connor Brooks Presents
+      </p>
+
+      <h1 id="ui-event-title" class="font-serif text-3xl sm:text-5xl font-semibold tracking-tight text-espresso leading-[1.15]">
+        Bett RoboHacks Thanksgiving 2026
+      </h1>
+
+      <p id="ui-subtitle" class="text-base sm:text-lg text-mutedBrown max-w-2xl leading-relaxed">
+      </p>
+
+      <!-- Compact Event Metadata Strip -->
+      <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+        <div class="bg-cardWarm border border-borderWarm rounded-xl px-4 py-3">
+          <dt class="text-[11px] font-semibold uppercase tracking-wider text-mutedBrown">Location</dt>
+          <dd id="ui-location" class="text-sm font-medium text-espresso mt-1">TBD</dd>
+        </div>
+
+        <div class="bg-cardWarm border border-borderWarm rounded-xl px-4 py-3">
+          <dt class="text-[11px] font-semibold uppercase tracking-wider text-mutedBrown">Date & Time</dt>
+          <dd id="ui-datetime" class="text-sm font-medium text-espresso mt-1">Nov 27. 2026 3:00pm - Nov. 28 2026 3:00pm</dd>
+        </div>
+
+        <div class="bg-cardWarm border border-borderWarm rounded-xl px-4 py-3">
+          <dt class="text-[11px] font-semibold uppercase tracking-wider text-mutedBrown">Team Size</dt>
+          <dd id="ui-teamsize" class="text-sm font-medium text-espresso mt-1">1 – 3 Builders per Team</dd>
+        </div>
+
+        <div class="bg-cardWarm border border-borderWarm rounded-xl px-4 py-3">
+          <dt class="text-[11px] font-semibold uppercase tracking-wider text-mutedBrown">Theme</dt>
+          <dd id="ui-theme-short" class="text-sm font-medium text-terracotta mt-1">Robots in the Real World</dd>
+        </div>
+      </dl>
+    </header>
+
+    <!-- THEME, GOAL, AND WHY NARRATIVE -->
+    <section class="space-y-8">
+      <div class="bg-cardWarm border border-borderWarm rounded-2xl p-6 sm:p-8 space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-wider text-terracotta">2026 Theme</span>
+        <h2 id="ui-theme-title" class="font-serif text-2xl font-semibold text-espresso">
+          Robots in the Real World
+        </h2>
+        <p id="ui-theme-body" class="text-sm sm:text-base text-mutedBrown leading-relaxed"></p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-cardWarm border border-borderWarm rounded-2xl p-6 space-y-2.5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-forestSage">The Goal</span>
+          <h3 id="ui-goal-title" class="font-serif text-xl font-semibold text-espresso"></h3>
+          <p id="ui-goal-body" class="text-sm text-mutedBrown leading-relaxed"></p>
+        </div>
+
+        <div class="bg-cardWarm border border-borderWarm rounded-2xl p-6 space-y-2.5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-ochre">Why We Build</span>
+          <h3 id="ui-why-title" class="font-serif text-xl font-semibold text-espresso"></h3>
+          <p id="ui-why-body" class="text-sm text-mutedBrown leading-relaxed"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPACT PRIZES & SCHEDULE BOXES -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Small Prizes Box -->
+      <div class="bg-cardWarm border border-borderWarm rounded-2xl p-5 sm:p-6">
+        <div class="flex items-center justify-between pb-3 mb-3 border-b border-borderWarm">
+          <h2 class="font-serif text-lg font-semibold text-espresso">Prizes</h2>
+          <span class="text-[11px] uppercase tracking-wider text-ochre font-semibold">By Vote</span>
+        </div>
+        <ul id="ui-prizes-list" class="space-y-2.5 text-sm">
+          <!-- Populated from EVENT_CONFIG.prizes -->
+        </ul>
+      </div>
+
+      <!-- Small Schedule Box -->
+      <div class="bg-cardWarm border border-borderWarm rounded-2xl p-5 sm:p-6">
+        <div class="flex items-center justify-between pb-3 mb-3 border-b border-borderWarm">
+          <h2 class="font-serif text-lg font-semibold text-espresso">Schedule</h2>
+          <span class="text-[11px] uppercase tracking-wider text-forestSage font-semibold">CST</span>
+        </div>
+        <ul id="ui-schedule-list" class="space-y-2.5 text-sm">
+          <!-- Populated from EVENT_CONFIG.schedule -->
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- =====================================================================
+         BOTTOM SECTION: LINKS TO EACH PROJECT PAGE
+         (Edit EVENT_CONFIG.projectLinks in the <script> below to add links)
+         ===================================================================== -->
+    <section id="projects" class="pt-6 border-t border-borderWarm space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-terracotta">2026 Showcase</span>
+          <h2 class="font-serif text-2xl font-semibold text-espresso mt-0.5">Featured Projects</h2>
+        </div>
+        <p class="text-xs text-mutedBrown">Select a project below to view photos, demo videos, and build details.</p>
+      </div>
+
+      <div id="ui-project-links" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        <!-- Populated from EVENT_CONFIG.projectLinks -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER & COPYABLE SECOND-FILE TEMPLATE UTILITY
+       ===================================================================== -->
+  <footer class="border-t border-borderWarm bg-[#F3ECE1] mt-12">
+    <div class="max-w-4xl mx-auto px-5 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-mutedBrown">
+      <div>
+        <p id="ui-footer-title" class="font-medium text-espresso">Bett RoboHacks Thanksgiving 2026</p>
+        <p id="ui-footer-sub" class="mt-0.5"></p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <button onclick="copyProjectTemplate()" class="px-3.5 py-2 rounded-lg bg-cardWarm hover:bg-white border border-borderWarm text-espresso font-medium transition shadow-sm">
+          Copy <code>project-template.html</code>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Subtle Copy Confirmation Toast -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 opacity-0 translate-y-3 transition-all duration-200 pointer-events-none bg-espresso text-parchment text-xs font-medium px-4 py-2.5 rounded-lg shadow-lg">
+    Copied project-template.html to clipboard
+  </div>
+
+  <!-- =====================================================================
+       SECOND FILE TEMPLATE: project-template.html
+       Stored cleanly inside <template> so you can copy or download it anytime
+       to create individual project pages linked at the bottom of index.html.
+       ===================================================================== -->
+  <template id="project-page-template"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Showcase — Bett RoboHacks Thanksgiving 2026</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Newsreader & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            parchment: '#FAF6F0',
+            cardWarm: '#FFFDF9',
+            borderWarm: '#E6DDD0',
+            espresso: '#261D17',
+            mutedBrown: '#635347',
+            terracotta: '#B44B27',
+            ochre: '#C28226',
+            forestSage: '#3F5E4D',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-parchment text-espresso font-sans antialiased selection:bg-terracotta selection:text-white">
+
+  <main class="max-w-3xl mx-auto px-5 py-12 sm:py-16 space-y-10">
+
+    <!-- Back to Hackathon Home Link -->
+    <nav>
+      <a id="proj-back-link" href="../index.html" class="inline-flex items-center gap-1.5 text-xs font-medium text-mutedBrown hover:text-terracotta transition">
+        <span>&larr;</span>
+        <span>Back to Bett RoboHacks Thanksgiving 2026</span>
+      </a>
+    </nav>
+
+    <!-- Project Title, Team & Category -->
+    <header class="space-y-4 pb-6 border-b border-borderWarm">
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <span id="proj-category" class="px-2.5 py-0.5 rounded-full bg-[#F3ECE1] border border-borderWarm text-terracotta font-semibold">
+          Hardware & Robotics
+        </span>
+        <span id="proj-event" class="text-mutedBrown">Bett RoboHacks Thanksgiving 2026</span>
+      </div>
+
+      <h1 id="proj-title" class="font-serif text-3xl sm:text-4xl font-semibold text-espresso leading-tight">
+        Project Title Here
+      </h1>
+
+      <div class="text-sm text-mutedBrown space-y-1">
+        <p><strong class="text-espresso font-medium">Team:</strong> <span id="proj-team-name">Team Name</span></p>
+        <p><strong class="text-espresso font-medium">Members:</strong> <span id="proj-members">Member 1, Member 2, Member 3</span></p>
+      </div>
+    </header>
+
+    <!-- Project Overview & Technical Details -->
+    <section class="space-y-6">
+      <div class="space-y-2">
+        <h2 class="font-serif text-xl font-semibold text-espresso">Overview</h2>
+        <p id="proj-summary" class="text-sm sm:text-base text-mutedBrown leading-relaxed"></p>
+      </div>
+
+      <div class="bg-cardWarm border border-borderWarm rounded-2xl p-6 space-y-2.5">
+        <h2 class="font-serif text-lg font-semibold text-espresso">How It Was Built</h2>
+        <p id="proj-details" class="text-sm text-mutedBrown leading-relaxed"></p>
+        <div id="proj-tags" class="flex flex-wrap gap-2 pt-2"></div>
+      </div>
+    </section>
+
+    <!-- Demo Video Section (Auto-hides if videoUrl is empty) -->
+    <section id="proj-video-section" class="space-y-3 hidden">
+      <h2 class="font-serif text-xl font-semibold text-espresso">Demo Video</h2>
+      <div id="proj-video-container" class="bg-cardWarm border border-borderWarm rounded-2xl overflow-hidden"></div>
+    </section>
+
+    <!-- Project Pictures Gallery -->
+    <section id="proj-pictures-section" class="space-y-4">
+      <h2 class="font-serif text-xl font-semibold text-espresso">Photos & Build Gallery</h2>
+      <div id="proj-pictures-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- Optional Source Code / CAD Link -->
+    <footer id="proj-repo-footer" class="pt-6 border-t border-borderWarm flex items-center justify-between text-xs text-mutedBrown">
+      <span>Bett RoboHacks Thanksgiving 2026</span>
+      <a id="proj-repo-link" href="#" target="_blank" rel="noopener noreferrer" class="text-terracotta font-semibold hover:underline">
+        View Source Code / CAD &rarr;
+      </a>
+    </footer>
+
+  </main>
+
+  <!-- =====================================================================
+       EDIT THIS PROJECT'S DETAILS BELOW
+       ===================================================================== -->
+  <script>
+    const PROJECT_DATA = {
+      backToHomeUrl: "../index.html", // Use "index.html" if in the same folder
+      awardOrCategory: "1st Place • Autonomous Hardware",
+      projectTitle: "CranberryBot Autonomous Pantry Sorter",
+      teamName: "Team QuadBot",
+      teamMembers: ["Maya R.", "Liam T.", "Owen S."],
+
+      summary: "A tabletop computer-vision conveyor that identifies, weighs, and sorts donated Thanksgiving food drive items into category bins automatically.",
+
+      technicalDetails: "Built using a Raspberry Pi 5 camera module running OpenCV for label detection, paired with a 3D-printed 4-DOF servo diverter arm and load-cell scale. Over 36 hours we trained a lightweight classifier on 400+ pantry items and achieved 96% sorting accuracy during live judging.",
+
+      tags: ["Raspberry Pi 5", "Python", "OpenCV", "3D Printed CAD"],
+
+      // Paste a YouTube link (e.g. "https://www.youtube.com/watch?v=...") or direct .mp4 path, or leave ""
+      videoUrl: "",
+
+      // Add as many photos as you want: { url: "...", caption: "..." }
+      pictures: [
+        {
+          url: "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&w=900&q=80",
+          caption: "Final assembly on the testing bench before judging."
+        },
+        {
+          url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
+          caption: "Wiring the microcontroller and sensor harness."
+        }
+      ],
+
+      // Optional link to GitHub, Onshape CAD, or Google Drive (leave "" to hide)
+      repoUrl: "https://github.com/user/repo"
+    };
+
+    // Populate Page (No edits needed below)
+    document.addEventListener("DOMContentLoaded", () => {
+      document.title = `${PROJECT_DATA.projectTitle} — Bett RoboHacks Thanksgiving 2026`;
+      document.getElementById("proj-back-link").href = PROJECT_DATA.backToHomeUrl;
+      document.getElementById("proj-category").textContent = PROJECT_DATA.awardOrCategory;
+      document.getElementById("proj-title").textContent = PROJECT_DATA.projectTitle;
+      document.getElementById("proj-team-name").textContent = PROJECT_DATA.teamName;
+      document.getElementById("proj-members").textContent = PROJECT_DATA.teamMembers.join(", ");
+      document.getElementById("proj-summary").textContent = PROJECT_DATA.summary;
+      document.getElementById("proj-details").textContent = PROJECT_DATA.technicalDetails;
+
+      // Tags
+      const tagsEl = document.getElementById("proj-tags");
+      tagsEl.innerHTML = (PROJECT_DATA.tags || []).map(tag =>
+        `<span class="px-2.5 py-0.5 rounded-md bg-parchment border border-borderWarm text-xs text-mutedBrown">${tag}</span>`
+      ).join("");
+
+      // Video
+      if (PROJECT_DATA.videoUrl) {
+        const videoSec = document.getElementById("proj-video-section");
+        const videoBox = document.getElementById("proj-video-container");
+        const ytMatch = PROJECT_DATA.videoUrl.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+
+        if (ytMatch) {
+          videoBox.innerHTML = `<div class="aspect-video"><iframe class="w-full h-full" src="https://www.youtube.com/embed/${ytMatch[1]}" title="Project Demo Video" frameborder="0" allowfullscreen></iframe></div>`;
+        } else {
+          videoBox.innerHTML = `<video class="w-full" controls preload="metadata"><source src="${PROJECT_DATA.videoUrl}" /></video>`;
+        }
+        videoSec.classList.remove("hidden");
+      }
+
+      // Pictures
+      const picGrid = document.getElementById("proj-pictures-grid");
+      picGrid.innerHTML = (PROJECT_DATA.pictures || []).map(pic => `
+        <figure class="bg-cardWarm border border-borderWarm rounded-2xl overflow-hidden">
+          <img src="${pic.url}" alt="${pic.caption || PROJECT_DATA.projectTitle}" onerror="this.onerror=null;this.src='https://placehold.co/800x500/FAF6F0/635347?text=Project+Photo';" class="w-full h-56 object-cover" />
+          ${pic.caption ? `<figcaption class="px-4 py-2.5 text-xs text-mutedBrown border-t border-borderWarm">${pic.caption}</figcaption>` : ""}
+        </figure>
+      `).join("");
+
+      // Repo link
+      const repoLink = document.getElementById("proj-repo-link");
+      if (PROJECT_DATA.repoUrl) {
+        repoLink.href = PROJECT_DATA.repoUrl;
+      } else {
+        repoLink.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html></template>
+
+  <!-- =====================================================================
+       =====================================================================
+       EDIT HERE: EVENT CONFIGURATION & PROJECT LINKS
+       Update the fields below to customize your hackathon page.
+       =====================================================================
+       ===================================================================== -->
+  <script>
+    const EVENT_CONFIG = {
+      // 1. Countdown Target Date & Time (ISO 8601 format, CST = -06:00)
+      countdownTarget: "2026-11-27T15:00:00-06:00",
+      countdownNote: "— Nov 27, 2026 - Nov 28, 2026",
+
+      // 2. Header & Hero Text
+      eyebrow: "Connor Brooks Presents",
+      eventTitle: "Bett RoboHacks Thanksgiving 2026",
+      subtitle: "An opportunity for students in engineering and related fields to work together and sharpen their skills.",
+
+      // 3. Metadata Strip (Location, Time, Team Size, Theme)
+      location: "TBD",
+      dateTime: "Nov 27–28, 2026 • 3 PM - 3 PM",
+      teamSize: "1 – 3 Builders per Team",
+      themeShort: "Robots in the Real World",
+
+      // 4. Theme, Goal, and Why Sections
+      themeTitle: "Robots in the Real World",
+      themeBody: "Robotics has been advancing for decades, but it still hasn't seen widespread adoption. This hackathon challenges participants to create solutions to real-world problems with robotics.",
+
+      goalTitle: "From Sketch to Working Demo",
+      goalBody: "In 24 hours, design, build, wire, and program a mobile robot, robotic arm, drone, or other piece of technology that serves a specific useful purpose.",
+
+      whyTitle: "Why",
+      whyBody: "This hackathon is the perfect opportunity for students to develop their technical skills, explore their interests, and practice working in a team.",
+
+      // 5. Prizes (Keep concise for the compact Prizes box)
+      prizes: [
+        { place: "Coolest Hack", prize: "$50" },
+        { place: "Runnerup Coolest Hack", prize: "$25" },
+        { place: "Best Idea", prize: "$10" },
+      ],
+
+      // 6. Schedule (Keep concise for the compact Schedule box)
+      schedule: [
+        { time: "Now", item: "Find a team. Order parts." },
+        { time: "Fri 3:00PM", item: "Start designing, building, etc." },
+        { time: "Sat 3:00PM", item: "Hands off. Voting. Prizes." }
+      ],
+
+      // 7. Links to Each Project Page (Copy & paste an object here for each team!)
+      projectLinks: [
+        {
+          title: "*PLACEHOLDER* CranberryBot Autonomous Pantry Sorter",
+          team: "Team QuadBot",
+          url: "projects/cranberry-bot.html"
+        },
+      ],
+
+      // 8. Footer Text
+      footerTitle: "Bett RoboHacks Thanksgiving 2026",
+      footerSub: "Bettendorf, Iowa"
+    };
+
+    // =====================================================================
+    // RENDER PAGE & COUNTDOWN (No edits needed below)
+    // =====================================================================
+    document.addEventListener("DOMContentLoaded", () => {
+      renderEventPage();
+      startCountdown();
+    });
+
+    function renderEventPage() {
+      document.title = EVENT_CONFIG.eventTitle;
+      setText("ui-countdown-note", EVENT_CONFIG.countdownNote);
+      setText("ui-eyebrow", EVENT_CONFIG.eyebrow);
+      setText("ui-event-title", EVENT_CONFIG.eventTitle);
+      setText("ui-subtitle", EVENT_CONFIG.subtitle);
+
+      setText("ui-location", EVENT_CONFIG.location);
+      setText("ui-datetime", EVENT_CONFIG.dateTime);
+      setText("ui-teamsize", EVENT_CONFIG.teamSize);
+      setText("ui-theme-short", EVENT_CONFIG.themeShort);
+
+      setText("ui-theme-title", EVENT_CONFIG.themeTitle);
+      setText("ui-theme-body", EVENT_CONFIG.themeBody);
+      setText("ui-goal-title", EVENT_CONFIG.goalTitle);
+      setText("ui-goal-body", EVENT_CONFIG.goalBody);
+      setText("ui-why-title", EVENT_CONFIG.whyTitle);
+      setText("ui-why-body", EVENT_CONFIG.whyBody);
+
+      setText("ui-footer-title", EVENT_CONFIG.footerTitle);
+      setText("ui-footer-sub", EVENT_CONFIG.footerSub);
+
+      // Render Compact Prizes List
+      document.getElementById("ui-prizes-list").innerHTML = EVENT_CONFIG.prizes.map(p => `
+        <li class="flex items-baseline justify-between gap-3">
+          <span class="font-medium text-espresso whitespace-nowrap">${escapeHtml(p.place)}</span>
+          <span class="text-mutedBrown text-right">${escapeHtml(p.prize)}</span>
+        </li>
+      `).join("");
+
+      // Render Compact Schedule List
+      document.getElementById("ui-schedule-list").innerHTML = EVENT_CONFIG.schedule.map(s => `
+        <li class="flex items-baseline justify-between gap-3">
+          <span class="font-medium text-terracotta whitespace-nowrap">${escapeHtml(s.time)}</span>
+          <span class="text-mutedBrown text-right">${escapeHtml(s.item)}</span>
+        </li>
+      `).join("");
+
+      // Render Bottom Project Links
+      document.getElementById("ui-project-links").innerHTML = EVENT_CONFIG.projectLinks.map(proj => `
+        <a href="${escapeHtml(proj.url)}" class="group bg-cardWarm hover:bg-white border border-borderWarm hover:border-terracotta/50 rounded-xl px-4 py-3.5 flex items-center justify-between gap-3 transition">
+          <div>
+            <p class="font-medium text-sm text-espresso group-hover:text-terracotta transition">${escapeHtml(proj.title)}</p>
+            <p class="text-xs text-mutedBrown mt-0.5">${escapeHtml(proj.team)}</p>
+          </div>
+          <span class="text-xs font-medium text-mutedBrown group-hover:text-terracotta transition">&rarr;</span>
+        </a>
+      `).join("");
+    }
+
+    function startCountdown() {
+      const targetTime = new Date(EVENT_CONFIG.countdownTarget).getTime();
+
+      const updateTimer = () => {
+        const diff = targetTime - Date.now();
+        if (isNaN(targetTime) || diff <= 0) {
+          setText("cd-days", "00");
+          setText("cd-hours", "00");
+          setText("cd-mins", "00");
+          setText("cd-secs", "00");
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        setText("cd-days", String(days).padStart(2, "0"));
+        setText("cd-hours", String(hours).padStart(2, "0"));
+        setText("cd-mins", String(mins).padStart(2, "0"));
+        setText("cd-secs", String(secs).padStart(2, "0"));
+      };
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
+
+    // Copy or Download the Second File Template (project-template.html)
+    function getProjectTemplateSource() {
+      return document.getElementById("project-page-template").innerHTML.trim();
+    }
+
+    function copyProjectTemplate() {
+      const source = getProjectTemplateSource();
+      const ta = document.createElement("textarea");
+      ta.value = source;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        showToast("Copied project-template.html to clipboard");
+      } catch (err) {
+        showToast("Use Download project-template.html to save the file");
+      }
+      document.body.removeChild(ta);
+    }
+
+    function downloadProjectTemplate() {
+      const source = getProjectTemplateSource();
+      const blob = new Blob([source], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "project-template.html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Downloaded project-template.html");
+    }
+
+    let toastTimeout = null;
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.remove("opacity-0", "translate-y-3");
+      toast.classList.add("opacity-100", "translate-y-0");
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-3");
+        toast.classList.remove("opacity-100", "translate-y-0");
+      }, 2800);
+    }
+
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+</html>
