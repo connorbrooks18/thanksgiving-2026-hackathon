@@ -1,3 +1,3 @@
-# Bett Robotics Thanksgiving 2026 Hackathon
+# Bett RoboHacks Thanksgiving 2026
 
 
